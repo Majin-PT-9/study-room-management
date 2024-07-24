@@ -1,0 +1,26 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import "bootswatch/dist/minty/_variables.scss";
+@import "bootstrap/scss/bootstrap";
+@import "bootswatch/dist/minty/_bootswatch.scss";
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';
+
+
+.errors-wrap{
+    display: inline-flex; width: 100%;
+    justify-content:space-between;
+    align-content: center;
+    align-items: center;
+}
+.errors-wrap .btn{
+    width: 40px;
+    height: 40px;
+}
