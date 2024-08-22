@@ -48,13 +48,13 @@ class SessionController extends Controller
             $session->title = $request->title;
             $session->session_code = $this->generateUniqueCode();
             $session->summary = $request->summary ?? '';
-            $session->starts_at = $request->starts_at; // Handle as time only, adjust if needed
-            $session->ends_at = $request->ends_at ?? ''; // Handle as time only, adjust if needed
+            $session->starts_at = $request->starts_at; 
+            $session->ends_at = $request->ends_at ?? ''; 
             $session->subject_id = $request->subject_id;
             if (!Auth::user()->isTeacher()) {
-                $session->teacher_id = $request->teacher_id;  // Set teacher from the form
+                $session->teacher_id = $request->teacher_id;  
             } else {
-                $session->teacher_id = Auth::user()->id;  // Set the teacher as the authenticated user
+                $session->teacher_id = Auth::user()->id;  
             }
             $session->created_by = Auth::user()->id;
             $session->active = 1;

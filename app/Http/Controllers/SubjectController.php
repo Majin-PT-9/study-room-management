@@ -34,7 +34,7 @@ class SubjectController extends Controller
         $subject->name = $request->name;
         $subject->save();
 
-        return response()->json($subject, 201); // Retorna o objeto criado como JSON
+        return response()->json($subject, 201); 
     }
 
     /**

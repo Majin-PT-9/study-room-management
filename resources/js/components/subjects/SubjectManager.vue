@@ -35,16 +35,16 @@ export default {
     data() {
         return {
             newSubjectName: '',
-            subjects: this.initialSubjects // Inicializa com os dados passados do Laravel
+            subjects: this.initialSubjects 
         };
     },
     mounted() {
-        console.log(this.initialSubjects); // Isso deve mostrar a lista de disciplinas no console do navegador
+        console.log(this.initialSubjects); 
         console.log(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
     },
     methods: {
         addSubject() {
-            // Verifica se o nome da disciplina não está vazio
+            
             if (this.newSubjectName.trim() === '') {
                 alert('O nome da disciplina não pode estar vazio.');
                 return;
@@ -56,9 +56,9 @@ export default {
                 }
             })
             .then(response => {
-                // A resposta do backend deve incluir a disciplina criada, incluindo seu novo ID
+               
                 this.subjects.push(response.data);
-                this.newSubjectName = ''; // Limpa o campo de entrada após o sucesso
+                this.newSubjectName = ''; 
             })
             .catch(error => {
                 console.error("Erro ao adicionar disciplina", error);

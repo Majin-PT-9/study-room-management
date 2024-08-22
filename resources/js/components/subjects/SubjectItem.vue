@@ -9,7 +9,7 @@
 export default {
     props: {
         name: String,
-        id: Number, // Garanta que você passe o ID como prop para cada SubjectItem
+        id: Number, 
     },
     mounted() {
     },

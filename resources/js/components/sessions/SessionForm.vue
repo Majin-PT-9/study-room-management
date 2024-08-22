@@ -67,7 +67,7 @@ export default {
                 ends_at: '',
                 subject_id: '',
                 day: '',
-                teacher_id: ''  // Initialize if needed, otherwise it could be undefined
+                teacher_id: '' 
 
             }
         };
@@ -75,14 +75,13 @@ export default {
     methods: {
         submitForm() {
             console.log(this.form)
-            // Example with Axios (make sure to install and import Axios)
+            
             axios.post('/sessions/store', this.form)
                 .then(response => {
-                    window.location.reload(); // Reload the page to see new data
+                    window.location.reload(); 
                 })
                 .catch(error => {
                     if (error.response && error.response.status === 422) {
-                        // Display validation errors
                         console.log(error.response.data.errors);
                         alert('Please correct the errors in the form.');
                     } else {

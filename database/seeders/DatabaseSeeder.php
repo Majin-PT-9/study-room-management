@@ -14,14 +14,17 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\Role::factory()->create([
-            'name' => 'Root',
-        ]);
-        \App\Models\User::factory()->create([
-             'name' => 'User',
-             'email' => 'default@studyroomsystem.com',
-             'role_id' => 1,
-            'password' => 'test'
-         ]);
+        // \App\Models\Role::factory()->create([
+        //     'name' => 'Root',
+        // ]);
+        // \App\Models\User::factory()->create([
+        //      'name' => 'User',
+        //      'email' => 'default@studyroomsystem.com',
+        //      'role_id' => 1,
+        //     'password' => 'test'
+        //  ]);
+        $this->call(GradeSeeder::class);
+
+
     }
 }
