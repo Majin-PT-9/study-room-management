@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('grade_id')->nullable();
             $table->unsignedBigInteger('assembly_id')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('grade_id')->references('id')->on('grades')->onDelete('cascade');
             $table->foreign('assembly_id')->references('id')->on('assemblies')->onDelete('cascade');

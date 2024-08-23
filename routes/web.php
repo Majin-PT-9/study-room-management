@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,18 @@ Route::prefix('users')->middleware('auth')->group(function () {
 
 
 });
+Route::prefix('users')->middleware('auth')->group(function () {
+    Route::get('', [UserController::class, 'index'])->name('users');
+    Route::get('create', [UserController::class, 'create'])->name('users.create');
+    Route::post('store', [UserController::class, 'store'])->name('users.store');
+    Route::get('edit/{user}', [UserController::class, 'edit'])->name('users.edit');
+    Route::post('update/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('delete/{user}', [UserController::class, 'delete'])->name('users.delete');
+
+
+});
+
+Route::resource('students', StudentController::class)->middleware('auth');
 
 //region sessions
 

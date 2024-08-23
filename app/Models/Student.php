@@ -11,6 +11,20 @@ class Student extends Model
 {
     use HasFactory,SoftDeletes,Sluggable;
 
+
+    public function assembly(){
+        return $this->belongsTo(Assembly::class);
+    }
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
     public function sluggable(): array
     {
         return [
